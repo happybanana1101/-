@@ -71,7 +71,11 @@ if rank == '2':
         addresslist[5] = addnum
         addresslist[4] = re.sub(r''+addresslist[5]+addresslist[6],'',addresslist[4],1)
     else:
-        ad5 = re.search(r'.*?街|.*?路|.*?巷|.*?道',addresslist[4]).group()
+        ad5 = re.search(r'.*?街|.*?路|.*?巷|.*?道',addresslist[4])
+        if ad5 != None:
+            ad5 = ad5.group()
+        else:
+            ad5 = ''
         addresslist[5] = ''
         addresslist[6] = re.sub(r''+ad5,'',addresslist[4],1)
         addresslist[4] = ad5
