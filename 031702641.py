@@ -64,7 +64,7 @@ elif addresslist[0] == '' and addresslist[1] == '': #一级，二级地址同时
 if rank == '2':
     addresslist.append('')
     addresslist.append('')
-    addnum = re.search(r'\d+号',addresslist[4])
+    addnum = re.search(r'\d+号',addresslist[4]).group()
     if addnum != None:  # 存在门牌号
         addresslist[6] = re.sub(r'.*?号','',addresslist[4],1)
         addresslist[5] = addnum
