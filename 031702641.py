@@ -1,4 +1,6 @@
 #-*-coding:utf-8 -*-
+
+# encoding:utf-8
 import re
 import json
 list1 = ['北京','天津','上海', '重庆' ,'河北省', '山西省', '内蒙古自治区', '辽宁省', '吉林省', '黑龙江省', '江苏省', '浙江省', '安徽省', '福建省', '江西省', '山东省', '河南省', '湖北省', '湖南省', '广东省', '广西壮族自治区', '海南省', '重庆市', '四川省', '贵州省', '云南省', '西藏自治区', '陕西省', '甘肃省', '青海省', '宁夏回族自治区', '新疆维吾尔自治区', '台湾省', '香港特别行政区', '澳门特别行政区']
@@ -80,5 +82,5 @@ if rank == '2':
         addresslist[6] = re.sub(r''+ad5,'',addresslist[4],1)
         addresslist[4] = ad5
 datedict = {'姓名':name.group(),'手机':pnum.group(),'地址':addresslist}
-datejson = json.dumps(datedict,ensure_ascii=False,indent=4)
+datejson = json.dumps(datedict,ensure_ascii=False)
 print(datejson)
